@@ -1,0 +1,9 @@
+protoc -I=./libs/grpc chat.proto \
+ --js_out=import_style=commonjs:./libs/grpc \
+ --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./libs/grpc
+
+
+ envoy -c envoy.yaml
+
+
+ npm run dev
